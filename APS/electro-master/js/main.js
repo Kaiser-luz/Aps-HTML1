@@ -165,4 +165,32 @@
 		});
 	}
 
+	(function() {
+  // Seleciona todas as bolhas dentro de #hot-deal
+  const bubbles = document.querySelectorAll('#hot-deal .bubble');
+
+  // Ao mover o mouse, atualiza posição/transform de cada bolha
+  window.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    const windowCenterX = window.innerWidth / 2;
+    const windowCenterY = window.innerHeight / 2;
+
+    bubbles.forEach(bubble => {
+      // fator de “velocidade” retirado do atributo data-speed
+      const speed = parseFloat(bubble.getAttribute('data-speed')) || 0.02;
+
+      // deslocamento relativo ao cursor
+      const offsetX = (windowCenterX - mouseX) * speed;
+      const offsetY = (windowCenterY - mouseY) * speed;
+
+      // mantém o translate(-50%, -50%) para centralizar a bolha,
+      // e adiciona o deslocamento calculado pelo cursor
+      bubble.style.transform = 
+        `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+    });
+  });
+})();
+
+
 })(jQuery);
