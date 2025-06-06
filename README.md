@@ -4,11 +4,6 @@ Este repositório contém o projeto de desenvolvimento front-end realizado como 
 O projeto está organizado da seguinte forma:
 
 Aps-HTML1/
-├── APS/
-│   └── electro-master/
-├── .gitattributes
-├── APS 2 - Web FrontEnd Improvements.pdf
-└── README.md
 
     APS/electro-master/: Contém os arquivos principais do projeto.
 
